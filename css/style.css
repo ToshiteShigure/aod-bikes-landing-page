@@ -30,8 +30,6 @@
     outline: 0;
     text-decoration: none;
 
-    /* for easier multiplying and working with rem */
-    font-size: 10px;
     font-family: "Lato", sans-serif;
 
     line-height: 2;
@@ -54,7 +52,7 @@ a,
 h2,
 button {
     text-transform: uppercase;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.125em;
     text-align: center;
 }
 
@@ -66,6 +64,11 @@ header.site-header {
     background-image: url("../img/header-img.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
+
+    display: grid;
+    align-items: center;
+
+    position: relative;
 }
 
 nav.site-nav {
@@ -74,32 +77,104 @@ nav.site-nav {
     align-items: center;
 
     padding: 2% 2%;
-    gap: 4%;
+    gap: 5em;
 }
 
 a.site-nav-link {
-    font-size: 1.3rem;
+    font-size: 0.975em;
     font-weight: bold;
 
     color: var(--link-color, #4d4959);
 }
 
-a.site-nav-link:hover {
+nav.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button.hamburger-menu-icon {
+    font-size: 1.875em;
+    font-weight: 900;
+
+    width: 6rem;
+    height: 6rem;
+
+    display: grid;
+    place-items: center;
+
+    background-color: transparent;
+
+    color: var(--link-color, #4d4959);
+
+    position: relative;
+    z-index: 2;
+}
+
+button.hamburger-menu-icon:after {
+    content: "☰";
+}
+
+button.hamburger-menu-icon-close:after {
+    content: "✕";
+
+    font-weight: 900;
+}
+
+div.hamburger-menu-list-close {
+    display: none;
+}
+
+div.hamburger-menu-list-open {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 20vw 20vw;
+
+    font-size: 1.2em;
+
+    gap: 2em;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+
+    background-color: var(--light-gray-color, #F7F7F7);
+    border: 1px dashed black;
+}
+
+a.hamburger-menu-link {
+    text-align: left;
+}
+
+a.site-nav-link:hover,
+button.hamburger-menu-icon:hover,
+button.hamburger-menu-icon-close:hover {
+    cursor: pointer;
     color: var(--btn-color, #64C29E);
 }
 
-a.site-nav-link:active {
+a.site-nav-link:active,
+button.hamburger-menu-icon:active,
+button.hamburger-menu-icon-close:hover {
     color: var(--btn-color-darker, #368f6d);
 }
 
 div.logo,
 a.logo {
-    width: 9.4rem;
-    height: 8.5rem;
+    width: 5.875em;
+    height: 5.313em;
+
     background-image: url("../img/logo.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
+
+    visibility: visible;
 }
 
 /* Main */
@@ -156,7 +231,7 @@ div.text {
     justify-content: center;
     align-items: center;
 
-    padding: 7rem calc(85 / 640 * 100%);
+    padding: 4.375em calc(85 / 640 * 100%);
 }
 
 div.description-text {
@@ -171,9 +246,9 @@ h2.heading,
 span.heading {
     color: var(--h2-color, #353738);
 
-    font-size: 2.2rem;
+    font-size: 1.375rem;
 
-    margin: 2rem 0;
+    margin: 1.25em 0;
 }
 
 /* <p> styling for Description and Advantages section */
@@ -181,7 +256,7 @@ p.paragraph,
 input.paragraph {
     color: var(--text-color, #848789);
 
-    font-size: 1.9rem;
+    font-size: 1.188em;
 }
 
 p.description-paragraph {
@@ -329,9 +404,10 @@ section.social-posts {
     justify-content: center;
     align-items: center;
 
-    gap: 6.5vw;
+    gap: 6vw;
 
-    padding: 12.25vw calc(335 / 1920 * 100%);
+    padding: 7.8vw calc(335 / 1920 * 100%);
+    padding-bottom: 5em;
 }
 
 div.social-post {
@@ -343,7 +419,7 @@ div.social-post {
 }
 
 img.social-post-icon {
-    width: 4rem;
+    width: 2.5em;
     object-fit: cover;
 }
 
@@ -360,7 +436,7 @@ span.social-post-time {
 
 p.paragraph-italic,
 input.paragraph-italic {
-    font-size: 2.9rem;
+    font-size: 1.813em;
     font-style: italic;
 
     line-height: 1.7;
@@ -378,12 +454,12 @@ div.social-post3 {
 div.social-post-nav {
     display: flex;
 
-    gap: 1.5rem;
+    gap: 0.938em;
 }
 
 div.social-post-nav-dot {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 0.938em;
+    height: 0.938em;
 
     border: 1px solid var(--dot-color, #A9AFB3);
 
@@ -503,7 +579,7 @@ div.discover-shop {
 
     background-color: var(--dark-gray-color, #282F35);
 
-    padding: 4.7vw 0;
+    padding: 5.5em 0;
 }
 
 a.discover-shop-link {
@@ -515,15 +591,15 @@ a.discover-shop-link {
 
     white-space: nowrap;
 
-    font-size: 1.7rem;
+    font-size: 1.063em;
     font-weight: bold;
 
     color: var(--white-color, #FFFFFF);
 
     width: auto;
-    height: 6rem;
+    height: 3.75em;
 
-    padding: 2rem 7rem;
+    padding: 1.25em 4.375em;
 
     margin: auto;
 
@@ -561,14 +637,14 @@ form.subscribe-form {
     justify-content: center;
     align-items: center;
 
-    gap: 4rem;
+    gap: 2.2em;
 }
 
 div.subscribe-content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 0.625em;
 
     width: 100%;
 }
@@ -579,7 +655,7 @@ input.subscribe-input {
     text-align: left;
 
     border: 1px solid var(--input-placeholder, #CDCDCD);
-    padding: 1.3rem 3rem;
+    padding: 0.5em 1em;
 }
 
 input.subscribe-input::placeholder {
@@ -593,11 +669,11 @@ button.subscribe-submit {
     color: var(--white-color, #FFFFFF);
 
     font-weight: 300;
-    font-size: 2.9rem;
+    font-size: 1.813em;
     text-transform: uppercase;
     letter-spacing: 0;
 
-    padding: 1.3rem 2.7rem;
+    padding: 0.448em 0.931em;
 }
 
 button.subscribe-submit:hover {
@@ -621,7 +697,7 @@ footer.site-footer {
     grid-template-areas:
         ". address socials socials . .";
 
-    grid-column-gap: 2rem;
+    grid-column-gap: 1.25rem;
 
     justify-content: center;
     align-items: center;
@@ -630,7 +706,7 @@ footer.site-footer {
 }
 
 span.company-name {
-    font-size: 1.9rem;
+    font-size: 1.138em;
     font-weight: bold;
     font-style: normal;
     line-height: 1.3;
@@ -641,7 +717,7 @@ p.company-address {
 
     width: 100%;
 
-    font-size: 1.67rem;
+    font-size: 1.044em;
     font-style: italic;
     line-height: 1.3;
 }
@@ -655,9 +731,9 @@ div.socials {
     justify-content: center;
     align-items: center;
 
-    gap: 1.8rem;
+    gap: 1.078em;
 
-    padding: 3rem;
+    padding: 1.796em;
 }
 
 a.twitter {
@@ -667,8 +743,8 @@ a.twitter {
     background-repeat: no-repeat;
     background-size: cover;
 
-    width: 4.2rem;
-    height: 4.1rem;
+    width: 2.515em;
+    height: 2.455em;
 }
 
 a.facebook {
@@ -678,8 +754,8 @@ a.facebook {
     background-repeat: no-repeat;
     background-size: cover;
 
-    width: 4.2rem;
-    height: 4.1rem;
+    width: 2.515em;
+    height: 2.455em;
 }
 
 a.pinterest {
@@ -689,8 +765,8 @@ a.pinterest {
     background-repeat: no-repeat;
     background-size: cover;
 
-    width: 4.2rem;
-    height: 4.1rem;
+    width: 2.515em;
+    height: 2.455em;
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -726,6 +802,24 @@ a.pinterest {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+    header.site-header {}
+
+    nav.site-nav {
+        justify-content: space-between;
+    }
+
+    nav.site-nav>a.site-nav-link:nth-child(3) {
+        margin-left: 2em;
+    }
+
+    a.site-nav-link-hidden {
+        display: none;
+    }
+
+    nav.hamburger-menu {
+        display: flex;
+    }
+
     div.advantage1 {
         grid-template-columns: repeat(2, minmax(auto, 1fr));
         grid-template-areas:
@@ -765,13 +859,29 @@ a.pinterest {
     }
 
     p.company-address {
-        min-width: 37.3rem;
+        min-width: 22.335em;
     }
 }
 
 @media (max-width: 767px) {
     * {
-        font-size: 9px;
+        font-size: 96%;
+    }
+
+    nav.site-nav {
+        justify-content: space-between;
+    }
+
+    nav.site-nav>a.site-nav-link:nth-child(3) {
+        margin-left: 2em;
+    }
+
+    a.site-nav-link-hidden {
+        display: none;
+    }
+
+    nav.hamburger-menu {
+        display: flex;
     }
 
     div.description-text {
@@ -813,10 +923,6 @@ a.pinterest {
             "shop-btn shop-btn";
     }
 
-    div.discover-shop {
-        padding: 8vw 0;
-    }
-
     footer.site-footer {
         grid-template-columns: repeat(3, minmax(auto, 1fr));
         grid-template-areas:
@@ -825,6 +931,6 @@ a.pinterest {
     }
 
     p.company-address {
-        min-width: 37.3rem;
+        min-width: 22.335em;
     }
 }

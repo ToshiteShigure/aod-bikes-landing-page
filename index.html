@@ -15,12 +15,22 @@
 <body>
     <header class="site-header">
         <nav class="site-nav">
-            <a class="site-nav-link" href="#" draggable="false">About us</a>
-            <a class="site-nav-link" href="#" draggable="false">Work</a>
+            <a class="site-nav-link site-nav-link-hidden" href="#" draggable="false">About us</a>
+            <a class="site-nav-link site-nav-link-hidden" href="#" draggable="false">Work</a>
             <a class="site-nav-link logo" href="#" draggable="false"></a>
-            <a class="site-nav-link" href="#" draggable="false">Shop</a>
-            <a class="site-nav-link" href="#" draggable="false">Contact</a>
+            <a class="site-nav-link site-nav-link-hidden" href="#" draggable="false">Shop</a>
+            <a class="site-nav-link site-nav-link-hidden" href="#" draggable="false">Contact</a>
+            <nav class="hamburger-menu">
+                <button class="hamburger-menu-icon" onclick="openHamburgerMenu(this)"></button>
+                <div id="hamburger-menu-list" class="hamburger-menu-list-close">
+                    <a class="site-nav-link hamburger-menu-link" href="#" draggable="false">About us</a>
+                    <a class="site-nav-link hamburger-menu-link" href="#" draggable="false">Work</a>
+                    <a class="site-nav-link hamburger-menu-link" href="#" draggable="false">Shop</a>
+                    <a class="site-nav-link hamburger-menu-link" href="#" draggable="false">Contact</a>
+                </div>
+            </nav>
         </nav>
+
     </header>
     <main class="site-main">
         <section class="description">
@@ -163,6 +173,15 @@
         </div>
     </footer>
 
+    <script>
+        // document.getElementsByClassName("button.hamburger-menu-icon").onclick = function() {openHamburgerMenu()};
+
+
+        function openHamburgerMenu(elm) {
+            document.getElementById("hamburger-menu-list").classList.toggle("hamburger-menu-list-open");
+            elm.classList.toggle("hamburger-menu-icon-close");
+        }
+    </script>
 </body>
 
 </html>

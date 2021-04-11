@@ -15,21 +15,21 @@
 <body>
     <header class="site-header">
         <nav class="site-nav">
-            <a class="site-nav-link site-nav-link-hidden" href="#" draggable="false">About us</a>
-            <a class="site-nav-link site-nav-link-hidden" href="#" draggable="false">Work</a>
+            <a class="site-nav-link site-nav-link-hidden" href="#about-us" draggable="false">About us</a>
+            <a class="site-nav-link site-nav-link-hidden" href="#work" draggable="false">Work</a>
             <a class="site-nav-link logo" href="#" draggable="false"></a>
-            <a class="site-nav-link site-nav-link-hidden" href="#" draggable="false">Shop</a>
-            <a class="site-nav-link site-nav-link-hidden" href="#" draggable="false">Contact</a>
+            <a class="site-nav-link site-nav-link-hidden" href="#shop" draggable="false">Shop</a>
+            <a class="site-nav-link site-nav-link-hidden" href="#contact" draggable="false">Contact</a>
             <nav class="hamburger-menu">
                 <button class="hamburger-menu-icon" onclick="openHamburgerMenu(this)"></button>
                 <div class="hamburger-menu-list hamburger-menu-list-close">
-                    <a class="site-nav-link hamburger-menu-link" href="#" draggable="false">About us</a>
+                    <a class="site-nav-link hamburger-menu-link" href="#about-us" draggable="false">About us</a>
                     <hr class="divider">
-                    <a class="site-nav-link hamburger-menu-link" href="#" draggable="false">Work</a>
+                    <a class="site-nav-link hamburger-menu-link" href="#work" draggable="false">Work</a>
                     <hr class="divider">
-                    <a class="site-nav-link hamburger-menu-link" href="#" draggable="false">Shop</a>
+                    <a class="site-nav-link hamburger-menu-link" href="#shop" draggable="false">Shop</a>
                     <hr class="divider">
-                    <a class="site-nav-link hamburger-menu-link" href="#" draggable="false">Contact</a>
+                    <a class="site-nav-link hamburger-menu-link" href="#contact" draggable="false">Contact</a>
                 </div>
             </nav>
         </nav>
@@ -38,7 +38,7 @@
     <main class="site-main">
         <section class="description">
             <div class="description-img"></div>
-            <div class="description-text text">
+            <div id="about-us" class="description-text text">
                 <img src="./img/desc-icon.png" alt="" draggable="false">
                 <h2 class="heading">A new generation of vintage bike</h2>
                 <p class="description-paragraph paragraph">Lorem Ipsum is simply dummy text of the printing and
@@ -49,7 +49,7 @@
                     unchanged.</p>
             </div>
         </section>
-        <section class="advantages">
+        <section id="work" class="advantages">
 
             <div class="advantage1 advantage">
                 <div class="advantage1-text advantage-text text">
@@ -142,7 +142,7 @@
             </div>
         </section>
 
-        <section class="shop">
+        <section id="shop" class="shop">
             <div class="shop-img1"></div>
             <div class="shop-img2"></div>
             <div class="shop-img3"></div>
@@ -156,7 +156,7 @@
             </div>
         </section>
 
-        <section class="subscribe">
+        <section id="contact" class="subscribe">
             <form class="subscribe-form" action="#">
                 <div class="logo"></div>
                 <p class="paragraph-italic paragraph">Stay on the saddle!</p>

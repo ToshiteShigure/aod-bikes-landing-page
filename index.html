@@ -22,10 +22,13 @@
             <a class="site-nav-link site-nav-link-hidden" href="#" draggable="false">Contact</a>
             <nav class="hamburger-menu">
                 <button class="hamburger-menu-icon" onclick="openHamburgerMenu(this)"></button>
-                <div id="hamburger-menu-list" class="hamburger-menu-list-close">
+                <div class="hamburger-menu-list hamburger-menu-list-close">
                     <a class="site-nav-link hamburger-menu-link" href="#" draggable="false">About us</a>
+                    <hr class="divider">
                     <a class="site-nav-link hamburger-menu-link" href="#" draggable="false">Work</a>
+                    <hr class="divider">
                     <a class="site-nav-link hamburger-menu-link" href="#" draggable="false">Shop</a>
+                    <hr class="divider">
                     <a class="site-nav-link hamburger-menu-link" href="#" draggable="false">Contact</a>
                 </div>
             </nav>
@@ -58,7 +61,7 @@
                         unknown printer took a galley of type and scrambled it to make a type specimen book. It has
                         survived.
                     </p>
-                    <hr class="divider">
+                    <hr class="advantage-divider divider">
                 </div>
                 <div class="advantage1-img1"></div>
                 <div class="advantage1-img2"></div>
@@ -74,7 +77,7 @@
                         unknown printer took a galley of type and scrambled it to make a type specimen book. It has
                         survived.
                     </p>
-                    <hr class="divider">
+                    <hr class="advantage-divider divider">
                 </div>
                 <div class="advantage2-img1"></div>
                 <div class="advantage2-img2"></div>
@@ -90,7 +93,7 @@
                         unknown printer took a galley of type and scrambled it to make a type specimen book. It has
                         survived.
                     </p>
-                    <hr class="divider">
+                    <hr class="advantage-divider divider">
                 </div>
                 <div class="advantage3-img1"></div>
                 <div class="advantage3-img2"></div>
@@ -100,38 +103,42 @@
         </section>
 
         <section class="social-posts">
-            <div class="social-post1 social-post">
+            <div class="social-post">
                 <img class="social-post-icon" src="./img/social-posts-twitter.png" alt="" draggable="false">
-                <h2 class="social-post-company heading">AOD New York @aod<span
-                        class="social-post-time heading">　/　35&nbspmin</span></h2>
-                <p class="paragraph-italic paragraph" href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                <h2 class="social-post-company heading">AOD New York @aod<time
+                        class="social-post-time heading">　/　35&nbspmin</time></h2>
+                <p class="social-post-paragraph paragraph-italic paragraph" href="#">Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit.
                     Sed ut tellus
-                    acnulla semper rhoncus. Nullam a odio porttitor, dictum turpis vitae, pretium ante amet.</p>
+                    acnulla semper rhoncus. Nullam a odio porttitor, dictum turpis vitae, pretium ante amet. Lorem ipsum
+                    dolor sit quas illo amet. Tempore?</p>
             </div>
 
-            <div class="social-post2 social-post">
+            <div class="social-post social-post-hidden">
                 <img class="social-post-icon" src="./img/social-posts-twitter.png" alt="" draggable="false">
-                <h2 class="social-post-company heading">AOD New York @aod<span
-                        class="social-post-time heading">　/　35&nbspmin</span></h2>
-                <p class="paragraph-italic paragraph" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                <h2 class="social-post-company heading">AOD New York @aod<time
+                        class="social-post-time heading">　/　35&nbspmin</time></h2>
+                <p class="social-post-paragraph paragraph-italic paragraph" href="#">Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit.
                     Repellat
                     suscipit omnis, expedita odit numquam ipsam eveniet quam rerum eos sint doloremque illo debitis,
-                    dolorum, nam iusto quasi et perspiciatis! Quam?</p>
+                    dolorum, nam iusto quasi! Illo Quam?</p>
             </div>
 
-            <div class="social-post3 social-post">
+            <div class="social-post social-post-hidden">
                 <img class="social-post-icon" src="./img/social-posts-twitter.png" alt="" draggable="false">
-                <h2 class="social-post-company heading">AOD New York @aod<span
-                        class="social-post-time heading">　/　35&nbspmin</span></h2>
-                <p class="paragraph-italic paragraph" href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                <h2 class="social-post-company heading">AOD New York @aod<time
+                        class="social-post-time heading">　/　35&nbspmin</time></h2>
+                <p class="social-post-paragraph paragraph-italic paragraph" href="#">Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit.
                     Sint commodi
                     illum eos ullam! Non ea eveniet exercitationem ducimus, velit animi nostrum quibusdam adipisci, eum
-                    voluptatum quas illo ad iusto accusantium!</p>
+                    voluptatum quas illo ad iusto!</p>
             </div>
             <div class="social-post-nav">
-                <div class="social-post-nav-dot"></div>
-                <div class="social-post-nav-dot"></div>
-                <div class="social-post-nav-dot"></div>
+                <button class="social-post-dot social-post-dot-active" href="#" onclick="changeSocialPost(1)"></button>
+                <button class="social-post-dot" href="#" onclick="changeSocialPost(2)"></button>
+                <button class="social-post-dot" href="#" onclick="changeSocialPost(3)"></button>
             </div>
         </section>
 
@@ -163,23 +170,47 @@
     </main>
 
     <footer class="site-footer">
-        <p class="company-address"><span class="company-name">AOD New York</span><br>
+        <address class="company-address"><span class="company-name">AOD New York</span><br>
             2250 Lexington Avenue<br>
-            New York, NY 10035 - info@domain.com</p>
+            New York, NY 10035 - info@domain.com</address>
         <div class="socials">
-            <a href="#" class="twitter"></a>
-            <a href="#" class="facebook"></a>
-            <a href="#" class="pinterest"></a>
+            <a href="#" class="social twitter"></a>
+            <a href="#" class="social facebook"></a>
+            <a href="#" class="social pinterest"></a>
         </div>
     </footer>
 
     <script>
-        // document.getElementsByClassName("button.hamburger-menu-icon").onclick = function() {openHamburgerMenu()};
+        document.addEventListener("DOMContentLoaded", dotAlwaysActive);
 
+        let previousIndex = 1;
 
-        function openHamburgerMenu(elm) {
-            document.getElementById("hamburger-menu-list").classList.toggle("hamburger-menu-list-open");
-            elm.classList.toggle("hamburger-menu-icon-close");
+        function dotAlwaysActive(elm, index) {
+            changeSocialPost(1); // call a function with the first element
+        }
+
+        function changeSocialPost(index) {
+
+            if (index !== previousIndex) {
+                document.querySelector(`.social-post-dot:nth-child(${index})`).classList.add(
+                    "social-post-dot-active"); // make the current dot active
+                document.querySelector(`.social-post:nth-child(${index})`).classList.remove(
+                    "social-post-hidden"); // remove a class with display:none on the current element
+
+                document.querySelector(`.social-post:nth-child(${previousIndex})`).classList.add(
+                    "social-post-hidden"); // add a class with display:none on the previous element
+                document.querySelector(`.social-post-dot:nth-child(${previousIndex})`).classList.remove(
+                    "social-post-dot-active"); // make the previous dot inactive
+            } else return; // return if the current item is the previous item
+
+            previousIndex = index;
+        }
+
+        function openHamburgerMenu(elm) { // the element is display:none by default
+            document.querySelector(".hamburger-menu-list").classList.toggle(
+                "hamburger-menu-list-open"); // open the hamburger menu by turning on display:flex inside the class
+            elm.classList.toggle(
+                "hamburger-menu-icon-close"); // change the icon by replacing content:"☰" with content:"✕"
         }
     </script>
 </body>

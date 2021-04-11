@@ -37,6 +37,10 @@
     color: var(--text-color, #848789);
 }
 
+*:focus {
+    outline: 5px solid var(--btn-color-darkest, #246e52);
+}
+
 /* Body  */
 body {
     display: grid;
@@ -137,14 +141,25 @@ div.hamburger-menu-list-open {
 
     font-size: 1.2em;
 
-    gap: 2em;
+    gap: 1.5em;
     position: absolute;
     z-index: 1;
     top: 0;
     right: 0;
 
     background-color: var(--light-gray-color, #F7F7F7);
-    border: 1px dashed black;
+    border: 1px dashed var(--btn-color, #64C29E);
+}
+
+hr.divider {
+    width: 65px;
+    height: 1px;
+
+    background-color: var(--hr-color, #D7D7D7);
+}
+
+hr.advantage-divider {
+    margin-top: 2.5em
 }
 
 a.hamburger-menu-link {
@@ -237,7 +252,7 @@ div.text {
 div.description-text {
     grid-area: desc-text;
 
-    padding: 12.25vw calc(335 / 1920 * 100%);
+    padding: 7.5vw calc(335 / 1920 * 100%);
 }
 
 
@@ -414,7 +429,7 @@ div.social-post {
     display: flex;
     flex-direction: column;
 
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -428,7 +443,7 @@ h2.social-post-company {
     letter-spacing: 0.1em;
 }
 
-span.social-post-time {
+time.social-post-time {
     font-weight: 300;
 
     color: var(--text-color, #848789);
@@ -443,11 +458,7 @@ input.paragraph-italic {
     text-align: center;
 }
 
-div.social-post2 {
-    display: none;
-}
-
-div.social-post3 {
+div.social-post-hidden {
     display: none;
 }
 
@@ -457,23 +468,38 @@ div.social-post-nav {
     gap: 0.938em;
 }
 
-div.social-post-nav-dot {
+button.social-post-dot {
     width: 0.938em;
     height: 0.938em;
 
     border: 1px solid var(--dot-color, #A9AFB3);
 
     border-radius: 50%;
+
+    background-color: transparent;
 }
 
-div.social-post-nav-dot:hover {
+button.social-post-dot:focus {
+    outline: none;
+    box-shadow: 0 0 0 5px var(--light-gray-color, #F7F7F7), 0 0 0 10px var(--btn-color-darkest, #246e52);
+
     cursor: pointer;
 
-    border: 2px solid var(--text-color, #848789);
+    background-color: var(--text-color, #848789);
 }
 
-div.social-post-nav-dot:active {
+
+button.social-post-dot:hover {
     cursor: pointer;
+
+    border: 3px solid var(--text-color, #848789);
+}
+
+button.social-post-dot:active,
+button.social-post-dot-active {
+    cursor: pointer;
+
+    border: 3px solid var(--text-color, #848789);
 
     background-color: var(--text-color, #848789);
 }
@@ -712,7 +738,7 @@ span.company-name {
     line-height: 1.3;
 }
 
-p.company-address {
+address.company-address {
     grid-area: address;
 
     width: 100%;
@@ -734,6 +760,21 @@ div.socials {
     gap: 1.078em;
 
     padding: 1.796em;
+}
+
+a.social:focus {
+    outline: none;
+    border-radius: 50%;
+
+    box-shadow: 0 0 0 5px var(--light-gray-color, #F7F7F7), 0 0 0 10px var(--btn-color-darkest, #246e52);
+}
+
+a.social:hover {
+    opacity: 75%;
+}
+
+a.social:active {
+    opacity: 50%;
 }
 
 a.twitter {
@@ -802,8 +843,6 @@ a.pinterest {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-    header.site-header {}
-
     nav.site-nav {
         justify-content: space-between;
     }
@@ -858,7 +897,7 @@ a.pinterest {
             ". address .";
     }
 
-    p.company-address {
+    address.company-address {
         min-width: 22.335em;
     }
 }
@@ -882,6 +921,10 @@ a.pinterest {
 
     nav.hamburger-menu {
         display: flex;
+    }
+
+    div.hamburger-menu-list-open {
+        width: 100%;
     }
 
     div.description-text {
@@ -930,7 +973,7 @@ a.pinterest {
             ". address .";
     }
 
-    p.company-address {
+    address.company-address {
         min-width: 22.335em;
     }
 }
